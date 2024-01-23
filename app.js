@@ -14,11 +14,15 @@ const port = process.env.PORT || 3000
 const corsOptions = {
   origin: [
     'http://localhost:3000',
+    'http://localhost:3001',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:3001',
     'https://21jasper12.github.io'
   ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'ngrok-skip-browser-warning']
 }
+
 
 app.use(cors(corsOptions))
 app.use(express.urlencoded({ extended: true }))
